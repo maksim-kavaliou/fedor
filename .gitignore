@@ -1,0 +1,19 @@
+# Solution/Project #
+####################
+*.suo
+*.user
+*.Cache
+*.ReSharper
+*.DotSettings
+
+# Directories      #
+####################
+bin/
+obj/
+_ReSharper.*/
+/PatientDose.Presentation.Web/logs/
+/PatientDose.Presentation.Web/Content/master.css
+/PatientDose.Presentation.Web/Content/main.css
+/PatientDose.Presentation.Web/Emails/
+/DataCollectorAgent.Installer/*.log
+/PatientDose.Presentation.Web/Instructions/

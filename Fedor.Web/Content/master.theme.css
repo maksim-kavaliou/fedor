@@ -1,0 +1,64 @@
+﻿.tail-top, .tail-top1, .tail-top2, .tail-top3 {
+    background-repeat:repeat-x;
+    background-color:#f2f2f2;
+    background-position:left top;
+    min-width:980px
+}
+
+.tail-top {
+    background-image:url(../images/tail-top.gif)
+}
+
+ul, ol { list-style: none;}
+a { cursor: pointer;}
+/* Global properties */
+body {background:#fff;font-family:Arial, Helvetica, sans-serif;font-size:100%;line-height:1em;color:#464646}
+html {min-width:980px}
+html, body {height:100%}
+/* Global Structure = */
+.container {margin:0 auto;width:990px;font-size:.75em}
+/* Header */
+header .container {height:131px;overflow:hidden;position:relative}
+.header-box {width:100%;background:url(../images/header-box-tail.gif) repeat-x left top;position:relative;top: 50px;height: 81px;border-radius: 10px;}
+
+header nav {padding-right:25px}
+header nav li {float:left;font-size:18px;line-height:3em;text-transform:uppercase;padding-left:21px;margin-left:19px;background: url(../images/divider.gif) repeat-y left top;}
+header nav li:first-child {background: none;padding-left:0;margin-left:0}
+header nav li a {color:#fff;text-decoration:none}
+header nav li.current a, header nav li a:hover {color:#82b704}
+
+#faded { position: relative;}
+#faded ul.pagination {padding:0;margin:0;width: 240px;}
+#faded ul.pagination li a {
+    position: relative;
+    z-index: 2; 
+    width:270px;
+    height:85px;
+    background-repeat:no-repeat;
+    background-position:left -85px;
+    background-image:url(../images/thumb-sprite.png);
+    text-decoration:none;
+    display:block;
+    color: #464646;
+}
+#faded ul.pagination li a .menu-item{
+    font-size: 20px;
+    padding: 32px 0 32px 25px;
+}
+#faded ul.pagination li.current a {background-position:left top;color:#fff}
+
+/*width + left = 990px*/
+#faded .pagination-content {
+    height: 100%;
+    width: 750px;
+    position: absolute;
+    left: 240px;
+    top: 0;
+    background: linear-gradient(to top right, #193f04, #AAFF3F);/* #73ab02*/
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.content-data {
+    padding: 5px 5px 5px 30px;
+}
