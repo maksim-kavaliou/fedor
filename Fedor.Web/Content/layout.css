@@ -1,4 +1,9 @@
-﻿.logo {
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
     position: relative;
     height: 116px;
     width: 70px;

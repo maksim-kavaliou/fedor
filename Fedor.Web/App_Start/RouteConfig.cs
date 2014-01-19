@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using Fedor.Infrastructure;
 
 namespace Fedor.Web
 {
@@ -11,6 +8,11 @@ namespace Fedor.Web
 	{
 		public static void RegisterRoutes(RouteCollection routes)
 		{
+            if (RouteTable.Routes[DefaultRouteNames.Default] != null)
+            {
+                return;
+            }
+
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
 			routes.MapRoute(

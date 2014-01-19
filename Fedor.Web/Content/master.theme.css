@@ -2,7 +2,8 @@
     background-repeat:repeat-x;
     background-color:#f2f2f2;
     background-position:left top;
-    min-width:980px
+    min-width: 980px;
+    height: 100%;
 }
 
 .tail-top {
@@ -14,7 +15,6 @@ a { cursor: pointer;}
 /* Global properties */
 body {background:#fff;font-family:Arial, Helvetica, sans-serif;font-size:100%;line-height:1em;color:#464646}
 html {min-width:980px}
-html, body {height:100%}
 /* Global Structure = */
 .container {margin:0 auto;width:990px;font-size:.75em}
 /* Header */

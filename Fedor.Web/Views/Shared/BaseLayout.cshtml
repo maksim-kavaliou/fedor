@@ -1,0 +1,40 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="base-layout" class="tail-top">
+    
+    <header>
+        <div class="container">
+            <div class="header-box">
+                <div class="header-title pull-left">
+                    <span>Дядя Feд<span class="green-highlight">OR</span></span>
+                </div>
+                
+                <nav class="pull-right">
+                    <ul id="main-menu">
+                        <li id="index"><a href="@Url.Route(Actions.Index, Controllers.Home)">Главная</a></li>
+                        <li id="about"><a href="@Url.Route(Actions.About, Controllers.Home)">О компании</a></li>
+                        <li id="gallery"><a href="@Url.Route(Actions.Gallery, Controllers.Home)">Галерея</a></li>
+                        <li id="contacts"><a href="@Url.Route(Actions.Contacts, Controllers.Home)">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <section id="content">
+        <div class="container">@RenderBody()</div>
+    </section>
+
+    <div class="main-header">
+        <div class="logo"></div>
+        <div>Центр языкового расвития и коррекции речи</div>
+        <div>Дядя FедоR</div>
+    </div>
+  
+
+</div>
+
+
+

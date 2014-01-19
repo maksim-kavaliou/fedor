@@ -16,5 +16,19 @@ namespace Fedor.Web.Controllers
             return View();
         }
 
+        public ViewResult About()
+        {
+            return View();
+        }
+
+        public ViewResult Contacts()
+        {
+            return View();
+        }
+
+        public ViewResult Gallery()
+        {
+            return View();
+        }
     }
 }
