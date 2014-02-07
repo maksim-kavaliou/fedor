@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace Fedor.Web.Controllers
 {
@@ -10,20 +6,21 @@ namespace Fedor.Web.Controllers
     {
         //
         // GET: /Home/
-
         public ActionResult Index()
         {
             return View();
         }
 
-        public ViewResult About()
+        [ChildActionOnly]
+        public PartialViewResult About()
         {
-            return View();
+            return PartialView();
         }
 
-        public ViewResult Contacts()
+        [ChildActionOnly]
+        public PartialViewResult Contacts()
         {
-            return View();
+            return PartialView();
         }
 
         public ViewResult Gallery()
