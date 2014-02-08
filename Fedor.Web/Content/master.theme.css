@@ -56,6 +56,7 @@ footer {
 
 .slide-content {
     height: 100%;
+    position: relative;
 }
 
 .slide-content li {
@@ -64,9 +65,8 @@ footer {
     overflow:hidden;
     margin: 3px 5px 0;
     width: 60px;
-    float: left;
     height: 100%;
-    position: relative;
+    position: absolute;
 }
 
 .slide-content li .title-text {
@@ -86,12 +86,12 @@ footer {
     top: 0;
 }
 
-#page_1 .title-text {background:url(../images/page_1.gif) 0 0 no-repeat}
+#main .title-text {background:url(../images/page_1.gif) 0 0 no-repeat}
 #page_2 .title-text {background:url(../images/page_2.gif) 0 0 no-repeat}
 #about .title-text {background:url(../images/page_3.gif) 0 0 no-repeat}
 #page_4 .title-text {background:url(../images/page_4.gif) 0 0 no-repeat}
 #contacts .title-text {background:url(../images/page_5.gif) 0 0 no-repeat}
-#page_1.active .title-text, #page_1:hover .title-text {background:url(../images/page1_active.gif) 0 0 no-repeat}
+#main.active .title-text, #main:hover .title-text {background:url(../images/page1_active.gif) 0 0 no-repeat}
 #page_2.active .title-text, #page_2:hover .title-text {background:url(../images/page2_active.gif) 0 0 no-repeat}
 #about.active .title-text, #about:hover .title-text {background:url(../images/page3_active.gif) 0 0 no-repeat}
 #page_4.active .title-text, #page_4:hover .title-text {background:url(../images/page4_active.gif) 0 0 no-repeat}

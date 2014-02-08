@@ -5,6 +5,6 @@
         public const string Index = "Index";
         public const string About = "About";
         public const string Contacts = "Contacts";
-        public const string Gallery = "Gallery";
+        public const string Main = "Main";
     }
 }

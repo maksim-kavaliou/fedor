@@ -23,9 +23,10 @@ namespace Fedor.Web.Controllers
             return PartialView();
         }
 
-        public ViewResult Gallery()
+        [ChildActionOnly]
+        public PartialViewResult Main()
         {
-            return View();
+            return PartialView();
         }
     }
 }
