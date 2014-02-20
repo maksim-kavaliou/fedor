@@ -193,6 +193,9 @@
     <Content Include="Images\bg_content_right.jpg" />
     <Content Include="Images\bg_img.jpg" />
     <Content Include="Images\bg_top.jpg" />
+    <Content Include="Images\english_book.jpg" />
+    <Content Include="Images\german.jpg" />
+    <Content Include="Images\main.jpg" />
     <Content Include="Images\page1_active.gif" />
     <Content Include="Images\page2_active.gif" />
     <Content Include="Images\page3_active.gif" />
@@ -203,6 +206,7 @@
     <Content Include="Images\page_3.gif" />
     <Content Include="Images\page_4.gif" />
     <Content Include="Images\page_5.gif" />
+    <Content Include="Images\sand.jpg" />
     <Content Include="Scripts\backbone-min.js" />
     <Content Include="Scripts\backbone.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -239,6 +243,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contacts.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
+    <Content Include="Views\Home\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

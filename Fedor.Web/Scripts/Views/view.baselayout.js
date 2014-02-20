@@ -6,7 +6,7 @@
     slideContent: ".slide-content",
 
     events: {
-        "click .slide-content li": "expandSection"
+        "click .slide-content .slide-action": "expandSection"
     },
 
     initialize: function (options) {
@@ -14,7 +14,7 @@
         $(this.options.activeTab).addClass("active");
 
         this.$slideContent = $(this.slideContent);
-        this.$slideElements = this.$slideContent.find("li");
+        this.$slideElements = this.$slideContent.find(".slide-action");
         this.initSize();
         this.initPositions();
     },
@@ -41,7 +41,7 @@
         $active.css({ width: this._sectionSize + "px" });
 
         var self = this;
-        $active.nextAll("li").each(function () {
+        $active.nextAll(".slide-action").each(function () {
             var $item = $(this);
 
             var leftPosition = $item.position().left;
@@ -61,12 +61,12 @@
         }
 
         var self = this;
-        var $currentActive = $currentTarget.nextAll("li.active");
+        var $currentActive = $currentTarget.nextAll(".slide-action.active");
         var $itemsToMove;
 
         if ($currentActive.length === 0) {
-            $currentActive = $currentTarget.prevAll("li.active");
-            $itemsToMove = $currentTarget.prevUntil($currentActive, "li").add($currentTarget);
+            $currentActive = $currentTarget.prevAll(".slide-action.active");
+            $itemsToMove = $currentTarget.prevUntil($currentActive, ".slide-action").add($currentTarget);
 
             $currentTarget.css({ width: this._sectionSize + "px" });
             $currentActive.css({ width: this._closedElementWidth });
@@ -78,7 +78,7 @@
             });
         } else {
             // move forward
-            $itemsToMove = $currentTarget.nextUntil($currentActive, "li").add($currentActive);;
+            $itemsToMove = $currentTarget.nextUntil($currentActive, ".slide-action").add($currentActive);;
 
             $currentTarget.css({ width: this._sectionSize + "px" });
             $currentActive.css({ width: this._closedElementWidth });

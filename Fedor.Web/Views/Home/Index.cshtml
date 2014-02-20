@@ -5,13 +5,16 @@
 
 <div id="content-wrapper">
     <ul class="slide-content">
-        <li id="main">
+        <li id="main" class="slide-action">
             @Html.Action(Actions.Main)
         </li>
-        <li id="about">
+        <li id="about" class="slide-action">
             @Html.Action(Actions.About)
         </li>
-        <li id="contacts">
+        <li id="gallery" class="slide-action">
+            @Html.Action(Actions.Gallery)
+        </li>
+        <li id="contacts" class="slide-action">
             @Html.Action(Actions.Contacts)
         </li>
     </ul>

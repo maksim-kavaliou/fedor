@@ -6,5 +6,6 @@
         public const string About = "About";
         public const string Contacts = "Contacts";
         public const string Main = "Main";
+        public const string Gallery = "Gallery";
     }
 }
