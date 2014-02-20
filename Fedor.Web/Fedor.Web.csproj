@@ -196,6 +196,7 @@
     <Content Include="Images\english_book.jpg" />
     <Content Include="Images\german.jpg" />
     <Content Include="Images\main.jpg" />
+    <Content Include="Images\map.png" />
     <Content Include="Images\page1_active.gif" />
     <Content Include="Images\page2_active.gif" />
     <Content Include="Images\page3_active.gif" />
