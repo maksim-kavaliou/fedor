@@ -1,6 +1,7 @@
 ﻿BaseLayoutView = Backbone.View.extend({
 
     initItemWidth: 65,
+    slideStep: 10,
 
     el: ".main-content",
     slideContent: ".slide-content",
@@ -60,47 +61,63 @@
             return;
         }
 
-        var self = this;
         var $currentActive = $currentTarget.nextAll(".slide-action.active");
         var $itemsToMove;
+        var counter = this._sectionContentSize;
 
         if ($currentActive.length === 0) {
             $currentActive = $currentTarget.prevAll(".slide-action.active");
             $itemsToMove = $currentTarget.prevUntil($currentActive, ".slide-action").add($currentTarget);
 
-            $currentTarget.css({ width: this._sectionSize + "px" });
-            $currentActive.css({ width: this._closedElementWidth });
-
-            $itemsToMove.each(function () {
-                var $item = $(this);
-
-                self.moveItemBackward($item);
-            });
+            this.slideItems($itemsToMove, $currentActive, $currentTarget, this.moveItemBackward, counter);
         } else {
             // move forward
             $itemsToMove = $currentTarget.nextUntil($currentActive, ".slide-action").add($currentActive);;
 
-            $currentTarget.css({ width: this._sectionSize + "px" });
-            $currentActive.css({ width: this._closedElementWidth });
-
-            $itemsToMove.each(function () {
-                var $item = $(this);
-
-                self.moveItemForward($item);
-            });
+            this.slideItems($itemsToMove, $currentActive, $currentTarget, this.moveItemForward, counter);
         }
 
         $currentActive.removeClass("active");
         $currentTarget.addClass("active");
     },
-    
-    moveItemForward: function ($item) {
-        var leftPosition = $item.position().left;
-        $item.css({ left: leftPosition + this._sectionContentSize + "px" });
+
+    slideItems: function ($itemsToMove, $currentActive, $currentTarget, moveAction, counter) {
+        if (counter > 0) {
+            var step = this.slideStep;
+
+            if (counter >= step) {
+                counter = counter - step;
+            } else {
+                step = counter;
+                counter = 0;
+            }
+
+            $itemsToMove.each(function () { moveAction($(this), step); });
+            this.decreaseItemWidth($currentActive, step);
+            this.increaseItemWidth($currentTarget, step);
+
+            var self = this;
+            setTimeout(function () { self.slideItems($itemsToMove, $currentActive, $currentTarget, moveAction, counter); }, 1);
+        }
     },
 
-    moveItemBackward: function ($item) {
+    moveItemForward: function ($item, step) {
         var leftPosition = $item.position().left;
-        $item.css({ left: leftPosition - this._sectionContentSize + "px" });
+        $item.css({ left: leftPosition + step + "px" });
+    },
+
+    moveItemBackward: function ($item, step) {
+        var leftPosition = $item.position().left;
+        $item.css({ left: leftPosition - step + "px" });
+    },
+
+    decreaseItemWidth: function ($item, step) {
+        var width = $item.width();
+        $item.css({ width: width - step + "px" });
+    },
+
+    increaseItemWidth: function ($item, step) {
+        var width = $item.width();
+        $item.css({ width: width + step + "px" });
     }
 });
