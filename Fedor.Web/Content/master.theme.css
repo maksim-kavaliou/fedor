@@ -105,3 +105,5 @@ footer {
     border-radius: 5px;
     overflow: hidden;
 }
+
+#logo {display:block;background:url(../images/logo.png) no-repeat;width:440px;height:100px;text-indent:-9999px}
