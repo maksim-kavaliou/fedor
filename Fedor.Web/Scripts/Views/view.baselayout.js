@@ -7,7 +7,7 @@
     slideContent: ".slide-content",
 
     events: {
-        "click .slide-content .slide-action": "expandSection"
+        "click .slide-content .slide-action .title-text": "expandSection"
     },
 
     initialize: function (options) {
@@ -53,32 +53,30 @@
     },
 
     expandSection: function (event) {
-        var $currentTarget = $(event.currentTarget);
+        var $slideAction = $(event.currentTarget).closest('.slide-action');
 
-        if ($currentTarget.hasClass("active")) {
-            event.preventDefault();
-            event.stopPropagation();
-            return;
+        if ($slideAction.hasClass("active")) {
+            return false;
         }
 
-        var $currentActive = $currentTarget.nextAll(".slide-action.active");
+        var $currentActive = $slideAction.nextAll(".slide-action.active");
         var $itemsToMove;
         var counter = this._sectionContentSize;
 
         if ($currentActive.length === 0) {
-            $currentActive = $currentTarget.prevAll(".slide-action.active");
-            $itemsToMove = $currentTarget.prevUntil($currentActive, ".slide-action").add($currentTarget);
+            $currentActive = $slideAction.prevAll(".slide-action.active");
+            $itemsToMove = $slideAction.prevUntil($currentActive, ".slide-action").add($slideAction);
 
-            this.slideItems($itemsToMove, $currentActive, $currentTarget, this.moveItemBackward, counter);
+            this.slideItems($itemsToMove, $currentActive, $slideAction, this.moveItemBackward, counter);
         } else {
             // move forward
-            $itemsToMove = $currentTarget.nextUntil($currentActive, ".slide-action").add($currentActive);;
+            $itemsToMove = $slideAction.nextUntil($currentActive, ".slide-action").add($currentActive);;
 
-            this.slideItems($itemsToMove, $currentActive, $currentTarget, this.moveItemForward, counter);
+            this.slideItems($itemsToMove, $currentActive, $slideAction, this.moveItemForward, counter);
         }
 
         $currentActive.removeClass("active");
-        $currentTarget.addClass("active");
+        $slideAction.addClass("active");
     },
 
     slideItems: function ($itemsToMove, $currentActive, $currentTarget, moveAction, counter) {

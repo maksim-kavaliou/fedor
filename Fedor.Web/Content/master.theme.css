@@ -100,6 +100,10 @@ footer {
 #page_4.active .title-text, #page_4:hover .title-text {background:url(../images/page4_active.gif) 0 0 no-repeat}
 #contacts.active .title-text, #contacts:hover .title-text {background:url(../images/Contacts_black.png) 0 0 no-repeat}
 
+#map-link, .bordered-picture {
+    display: block;
+}
+
 .bordered-picture {
     border: 1px solid #ccc;
     border-radius: 5px;
