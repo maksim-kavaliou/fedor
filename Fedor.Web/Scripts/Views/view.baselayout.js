@@ -1,6 +1,6 @@
 ﻿BaseLayoutView = Backbone.View.extend({
 
-    initItemWidth: 65,
+    initItemWidth: 80,
     slideStep: 10,
 
     el: ".main-content",
